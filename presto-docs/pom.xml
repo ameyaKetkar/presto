@@ -71,7 +71,7 @@
                 </dependencies>
             </plugin>
 
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <executions>
@@ -117,7 +117,7 @@
                         <version>${project.version}</version>
                     </dependency>
                 </dependencies>
-            </plugin>
+            </plugin> -->
 
             <plugin>
                 <groupId>io.airlift.maven.plugins</groupId>

@@ -42,7 +42,7 @@
 
         <air.java.version>1.8.0-151</air.java.version>
         <air.maven.version>3.3.9</air.maven.version>
-
+        <air.check.skip-checkstyle>true</air.check.skip-checkstyle>
         <dep.antlr.version>4.7.1</dep.antlr.version>
         <dep.airlift.version>0.178</dep.airlift.version>
         <dep.packaging.version>${dep.airlift.version}</dep.packaging.version>
@@ -1187,6 +1187,27 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                  <release>11</release>
+                  <annotationProcessorPaths>
+                    <path>
+                      <groupId>com.google.errorprone</groupId>
+                      <artifactId>error_prone_core</artifactId>
+                      <version>2.3.3-SNAPSHOT</version>
+                    </path>
+                  </annotationProcessorPaths>
+                  <compilerArgs>
+                    <arg>-XDcompilePolicy=simple</arg>
+                    <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:Collect -XepPatchChecks:Collect -XepPatchLocation:${project.basedir}/
+                      <!--mvn install:install-file -Dfile=/Users/ameya/FinalResults/error-prone/core/target/error_prone_core-2.3.3-SNAPSHOT.jar -DgroupId=com.google.errorprone -DartifactId=error_prone_core -Dversion=2.3.3-SNAPSHOT -Dpackaging=jar-->
+                    </arg>
+                  </compilerArgs>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.facebook.presto</groupId>
                 <artifactId>presto-maven-plugin</artifactId>
