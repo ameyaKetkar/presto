@@ -1202,7 +1202,7 @@
                   </annotationProcessorPaths>
                   <compilerArgs>
                     <arg>-XDcompilePolicy=simple</arg>
-                    <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:T2R -XepOpt:T2R:mappingLocation=${project.basedir}/mappings/ -XepPatchChecks:T2R -XepPatchLocation:${project.basedir}/
+                    <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:T2R -XepOpt:T2R:mappingLocation=/home/t2r/presto/t2r/ -XepPatchChecks:T2R -XepPatchLocation:${project.basedir}/
                       <!--mvn install:install-file -Dfile=/Users/ameya/FinalResults/error-prone/core/target/error_prone_core-2.3.3-SNAPSHOT.jar -DgroupId=com.google.errorprone -DartifactId=error_prone_core -Dversion=2.3.3-SNAPSHOT -Dpackaging=jar-->
                     </arg>
                   </compilerArgs>
